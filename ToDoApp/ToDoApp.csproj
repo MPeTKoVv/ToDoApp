@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>82f5ce08-c846-470b-8a25-206003cfec88</UserSecretsId>
+    <StartupObject>ToDoApp.Web.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

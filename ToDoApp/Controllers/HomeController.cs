@@ -1,6 +1,6 @@
-namespace ToDoApp.Controllers
+namespace ToDoApp.Web.Controllers
 {
-    using ToDoApp.ViewModels;
+    using ToDoApp.Web.ViewModels;
 
     using System.Diagnostics;
 
