@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ToDoApp.Data.DataModels;
-
-namespace ToDoApp.Data
+﻿namespace ToDoApp.Data
 {
+    using ToDoApp.Data.Models;
+    using Microsoft.EntityFrameworkCore;
+
     public class ToDoAppDbContext : DbContext
     {
         public ToDoAppDbContext(DbContextOptions<ToDoAppDbContext> options) : base(options)
