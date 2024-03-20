@@ -10,9 +10,20 @@
     <hr />
 </div>
 <div>
-    @if (!Model.Any())
+    @if (Model == null)
     {
-        <h3>You do not have any tasks yet</h3>
+        <div class="mx-auto">
+            <h4 class="text-center">You do not have any tasks yet</h4>
+            <div class="d-block align-items-center">
+                <a class="btn btn-primary" asp-controller="Task" asp-action="Add" role="button">Add</a>
+            </div>
+        </div>
     }
-    <a class="btn btn-primary" asp-controller="Task" asp-action="Add" role="button">Add</a>
+    else
+    {
+        foreach (var task in Model)
+        {
+
+        }
+    }
 </div>
