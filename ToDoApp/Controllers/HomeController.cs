@@ -3,20 +3,22 @@ namespace ToDoApp.Web.Controllers
     using System.Diagnostics;
     
     using ToDoApp.Web.ViewModels;
+    using ToDoApp.Services.Data.Interfaces;
 
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private ITaskService taskService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ITaskService taskService)
         {
-            _logger = logger;
+            this.taskService = taskService;
         }
 
         public IActionResult Index()
         {
+            var allTasks = taskService.GetAllTasks();
             return View();
         }
 

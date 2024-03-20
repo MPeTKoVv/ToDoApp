@@ -1,8 +1,10 @@
 namespace ToDoApp.Web
 {
-    using ToDoApp.Data;
-
     using Microsoft.EntityFrameworkCore;
+
+    using ToDoApp.Data;
+    using ToDoApp.Services.Data;
+    using ToDoApp.Services.Data.Interfaces;
 
     public class Program
     {
@@ -16,7 +18,7 @@ namespace ToDoApp.Web
             builder.Services.AddDbContext<ToDoAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ITaskService, TaskService>();
 
             var app = builder.Build();
 

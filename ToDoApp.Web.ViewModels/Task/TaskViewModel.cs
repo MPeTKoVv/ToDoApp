@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ToDoApp.Web.ViewModels.Task
+﻿namespace ToDoApp.Web.ViewModels.Task
 {
-    internal class TaskViewModel
+    public class TaskViewModel
     {
+        public int Id { get; set; }
+
+        public string Title { get; set; } = null!;
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? Deadline { get; set; }
+
+        public bool IsDone { get; set; }
     }
 }

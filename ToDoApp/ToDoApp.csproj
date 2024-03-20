@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
@@ -25,6 +26,7 @@
     <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
     <ProjectReference Include="..\ToDoApp.Data.Models\ToDoApp.Data.Models.csproj" />
     <ProjectReference Include="..\ToDoApp.Data\ToDoApp.Data.csproj" />
+    <ProjectReference Include="..\ToDoApp.Services.Data\ToDoApp.Services.Data.csproj" />
     <ProjectReference Include="..\ToDoApp.Web.ViewModels\ToDoApp.Web.ViewModels.csproj" />
   </ItemGroup>
 
