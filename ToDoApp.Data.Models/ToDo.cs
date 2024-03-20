@@ -1,7 +1,8 @@
 ﻿namespace ToDoApp.Data.Models
 {
-    using static ToDoApp.Common.DataValidationConstants.ToDo;
     using System.ComponentModel.DataAnnotations;
+
+    using static ToDoApp.Common.DataValidationConstants.ToDo;
 
     public class ToDo
     {

@@ -1,6 +1,7 @@
 namespace ToDoApp.Web
 {
     using ToDoApp.Data;
+
     using Microsoft.EntityFrameworkCore;
 
     public class Program
@@ -14,6 +15,8 @@ namespace ToDoApp.Web
             string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ToDoAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 

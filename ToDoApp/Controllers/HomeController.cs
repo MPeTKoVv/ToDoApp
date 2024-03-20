@@ -1,8 +1,8 @@
 namespace ToDoApp.Web.Controllers
 {
-    using ToDoApp.Web.ViewModels;
-
     using System.Diagnostics;
+    
+    using ToDoApp.Web.ViewModels;
 
     using Microsoft.AspNetCore.Mvc;
 

@@ -25,6 +25,7 @@
     <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
     <ProjectReference Include="..\ToDoApp.Data.Models\ToDoApp.Data.Models.csproj" />
     <ProjectReference Include="..\ToDoApp.Data\ToDoApp.Data.csproj" />
+    <ProjectReference Include="..\ToDoApp.Web.ViewModels\ToDoApp.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

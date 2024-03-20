@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp.Common\ToDoApp.Common.csproj" />
+  </ItemGroup>
+
 </Project>
