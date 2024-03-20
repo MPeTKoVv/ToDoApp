@@ -1,9 +1,9 @@
-﻿namespace ToDoApp.Web.ViewModels
+﻿namespace ToDoApp.Web.ViewModels.Task
 {
     using System.ComponentModel.DataAnnotations;
 
     using static ToDoApp.Common.DataValidationConstants.ToDo;
-    
+
     public class TaskFormModel
     {
         [Required]

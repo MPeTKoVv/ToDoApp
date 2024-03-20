@@ -1,8 +1,7 @@
 ﻿namespace ToDoApp.Controllers
 {
-    using ToDoApp.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+    using ToDoApp.Web.ViewModels.Task;
 
     public class TaskController : Controller
     {
