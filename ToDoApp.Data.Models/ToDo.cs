@@ -9,6 +9,7 @@
         public ToDo()
         {
             CreatedOn = DateTime.Now;
+            IsDone = false;
         }
 
         [Key]

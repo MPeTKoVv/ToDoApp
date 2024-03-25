@@ -1,6 +1,8 @@
 ﻿namespace ToDoApp.Services.Data
 {
+    using System.Threading.Tasks;
     using ToDoApp.Data;
+    using ToDoApp.Data.Models;
     using ToDoApp.Services.Data.Interfaces;
     using ToDoApp.Web.ViewModels.Task;
     
@@ -11,6 +13,19 @@
         public TaskService(ToDoAppDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public void AddTask(TaskFormModel taskFormModel)
+        {
+            var newTask = new ToDo
+            {
+                Title = taskFormModel.Title,
+                Description = taskFormModel.Description,
+                Deadline = taskFormModel.Deadline
+            };
+
+            dbContext.Tasks.Add(newTask);
+            dbContext.SaveChanges();
         }
 
         public IEnumerable<TaskViewModel> GetAllTasks()

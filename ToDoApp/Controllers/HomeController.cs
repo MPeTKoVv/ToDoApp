@@ -19,7 +19,7 @@ namespace ToDoApp.Web.Controllers
         public IActionResult Index()
         {
             var allTasks = taskService.GetAllTasks();
-            return View();
+            return View(allTasks);
         }
 
         public IActionResult Privacy()
