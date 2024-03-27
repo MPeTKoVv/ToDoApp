@@ -31,10 +31,14 @@
             @foreach (var task in Model)
             {
                 <div class="col-md-3">
-                    <div class="card mb-2">
+                    <div class="card mb-2 d-flex align-items-center">
                         <h4>@task.Title</h4>
-                        <p>@task.CreatedOn<p>
-                        <p>@task.Deadline<p>
+                        <p>Added on: @task.CreatedOn<p>
+                        <p>Deadline: @task.Deadline<p>
+                            <div>
+                                <a class="btn btn-success" asp-controller="Task" asp-action="Done" role="button">Done</a>
+
+                            </div>
                     </div>
                 </div>
             }
