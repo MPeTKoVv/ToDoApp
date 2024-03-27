@@ -6,7 +6,13 @@
 }
 
 <div>
-    <h2>Your tasks</h2>
+    <div class="d-flex align-items-center justify-content-between">
+        <h2 class="d-inline">Your tasks</h2>
+        @if (Model.Count != 0)
+        {
+            <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="Add" role="button">Add</a>
+        }
+    </div>
     <hr />
 </div>
 <div>
@@ -15,15 +21,23 @@
         <div class="mx-auto">
             <h4 class="text-center">You do not have any tasks yet</h4>
         </div>
+        <div class="d-block align-items-center">
+            <a class="btn btn-primary" asp-controller="Task" asp-action="Add" role="button">Add</a>
+        </div>
     }
     else
     {
-        foreach (var task in Model)
-        {
-
-        }
+        <div class="row">
+            @foreach (var task in Model)
+            {
+                <div class="col-md-3">
+                    <div class="card mb-2">
+                        <h4>@task.Title</h4>
+                        <p>@task.CreatedOn<p>
+                        <p>@task.Deadline<p>
+                    </div>
+                </div>
+            }
+        </div>
     }
-    <div class="d-block align-items-center">
-        <a class="btn btn-primary" asp-controller="Task" asp-action="Add" role="button">Add</a>
-    </div>
 </div>
