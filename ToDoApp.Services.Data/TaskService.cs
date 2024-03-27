@@ -1,11 +1,10 @@
 ﻿namespace ToDoApp.Services.Data
 {
-    using System.Threading.Tasks;
     using ToDoApp.Data;
     using ToDoApp.Data.Models;
     using ToDoApp.Services.Data.Interfaces;
     using ToDoApp.Web.ViewModels.Task;
-    
+
     public class TaskService : ITaskService
     {
         private readonly ToDoAppDbContext dbContext;
@@ -28,6 +27,24 @@
             dbContext.SaveChanges();
         }
 
+        public IEnumerable<TaskViewModel> AllDoneTasks()
+        {
+            IEnumerable<TaskViewModel> tasks = dbContext
+                .Tasks
+                .Select(t => new TaskViewModel
+                {
+                    Title = t.Title,
+                    CreatedOn = t.CreatedOn,
+                    Deadline = t.Deadline,
+                    IsDone = t.IsDone
+                })
+                .Where(t => t.IsDone)
+                .OrderBy(t => t.CreatedOn)
+                .ToList();
+
+            return tasks;
+        }
+
         public IEnumerable<TaskViewModel> GetAllTasks()
         {
             IEnumerable<TaskViewModel> tasks = dbContext
@@ -41,7 +58,7 @@
                 })
                 .Where(t => !t.IsDone)
                 .OrderBy(t => t.Deadline)
-                .ThenBy(t=> t.CreatedOn)
+                .ThenBy(t => t.CreatedOn)
                 .ToList();
 
             return tasks;

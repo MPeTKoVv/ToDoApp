@@ -46,5 +46,11 @@
                 return View(taskFormModel);
             }
         }
+
+        public IActionResult AllDoneTasks()
+        {
+            var allDoneTasks = taskService.AllDoneTasks();
+            return View(allDoneTasks);
+        }
     }
 }

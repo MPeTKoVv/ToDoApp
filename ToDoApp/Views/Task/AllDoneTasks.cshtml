@@ -2,15 +2,15 @@
 @model List<TaskViewModel>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Done Tasks";
 }
 
 <div>
     <div class="d-flex align-items-center justify-content-between">
-        <h2 class="d-inline">Your tasks</h2>
+        <h2 class="d-inline">Your Done Tasks</h2>
         @if (Model.Count != 0)
         {
-            <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="Add" role="button">Add</a>
+            <a class="btn btn-primary d-inline" asp-controller="Home" asp-action="Index" role="button">Your tasks</a>
         }
     </div>
     <hr />
@@ -19,10 +19,10 @@
     @if (Model.Count == 0)
     {
         <div class="mx-auto">
-            <h4 class="text-center">You do not have any tasks yet</h4>
+            <h4 class="text-center">You do not have any done tasks yet</h4>
         </div>
-        <div class="d-block align-items-center">
-            <a class="btn btn-primary" asp-controller="Task" asp-action="Add" role="button">Add</a>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Index" role="button">Your tasks</a>
         </div>
     }
     else
@@ -34,10 +34,6 @@
                     <div class="card mb-2 d-flex align-items-center">
                         <h4>@task.Title</h4>
                         <p>Added on: @task.CreatedOn<p>
-                        <p>Deadline: @task.Deadline<p>
-                            <div>
-                                <a class="btn btn-success" asp-controller="Task" asp-action="Done" role="button">Done</a>
-                            </div>
                     </div>
                 </div>
             }

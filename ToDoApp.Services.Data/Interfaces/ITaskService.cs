@@ -5,6 +5,7 @@
     public interface ITaskService
     {
         IEnumerable<TaskViewModel> GetAllTasks();
+        IEnumerable<TaskViewModel> AllDoneTasks();
         void AddTask(TaskFormModel taskViewModel);
     }
 }
