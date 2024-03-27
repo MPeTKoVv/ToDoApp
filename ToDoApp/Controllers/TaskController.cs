@@ -1,7 +1,6 @@
 ﻿namespace ToDoApp.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
     using ToDoApp.Services.Data.Interfaces;
     using ToDoApp.Web.ViewModels.Task;
 
@@ -30,6 +29,11 @@
         [HttpPost]
         public IActionResult Add(TaskFormModel taskFormModel)
         {
+            if (taskFormModel.Deadline < DateTime.UtcNow)
+            {
+
+            }
+
             try
             {
             taskService.AddTask(taskFormModel);

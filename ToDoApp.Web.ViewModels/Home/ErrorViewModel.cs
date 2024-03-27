@@ -1,4 +1,4 @@
-namespace ToDoApp.Web.ViewModels
+namespace ToDoApp.Web.ViewModels.Home
 {
     public class ErrorViewModel
     {

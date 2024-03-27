@@ -1,7 +1,7 @@
 ﻿@using ToDoApp.Web.ViewModels.Task
 @model TaskFormModel
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Add Task";
 }
 
 <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
@@ -16,7 +16,7 @@
     </div>
     <div class="form-floating">
         <input asp-for="Deadline" type="date" class="form-control" id="floatingPassword" placeholder="Deadline">
-        <label for="floatingPassword">Deadline</label>
+        <label for="floatingPassword">Deadline (optional)</label>
     </div>
     <div class="text-center">
         <input class="btn btn-primary mt-3" type="submit" value="Add" />

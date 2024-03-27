@@ -1,11 +1,12 @@
 namespace ToDoApp.Web.Controllers
 {
     using System.Diagnostics;
-    
-    using ToDoApp.Web.ViewModels;
-    using ToDoApp.Services.Data.Interfaces;
 
     using Microsoft.AspNetCore.Mvc;
+    
+    using ToDoApp.Web.ViewModels.Home;
+    using ToDoApp.Services.Data.Interfaces;
+
 
     public class HomeController : Controller
     {

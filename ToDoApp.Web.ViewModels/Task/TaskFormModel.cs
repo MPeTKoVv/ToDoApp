@@ -14,6 +14,7 @@
         [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
         public string Description { get; set; } = null!;
 
+        
         public DateTime? Deadline { get; set; }
     }
 }
