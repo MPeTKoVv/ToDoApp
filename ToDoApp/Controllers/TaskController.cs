@@ -15,7 +15,8 @@
 
         public IActionResult Index()
         {
-            return View();
+            var allTasks = taskService.GetAllTasks();
+            return View(allTasks);
         }
 
         [HttpGet]

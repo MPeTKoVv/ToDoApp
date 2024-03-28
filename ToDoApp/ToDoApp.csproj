@@ -30,4 +30,8 @@
     <ProjectReference Include="..\ToDoApp.Web.ViewModels\ToDoApp.Web.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+
 </Project>
