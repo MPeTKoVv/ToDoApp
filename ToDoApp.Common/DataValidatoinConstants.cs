@@ -1,6 +1,6 @@
 ﻿namespace ToDoApp.Common
 {
-    static public class DataValidationConstants
+    static public class DataValidatoinConstants
     {
         public static class ToDo
         {

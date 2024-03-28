@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using static ToDoApp.Common.DataValidationConstants.ToDo;
+    using static ToDoApp.Common.DataValidatoinConstants.ToDo;
 
     public class TaskFormModel
     {
