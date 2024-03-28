@@ -1,6 +1,7 @@
 ﻿namespace ToDoApp.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+
     using ToDoApp.Services.Data.Interfaces;
     using ToDoApp.Web.ViewModels.Task;
 
@@ -52,6 +53,12 @@
         {
             var allDoneTasks = taskService.AllDoneTasks();
             return View(allDoneTasks);
+        }
+
+        public IActionResult Done(int id)
+        {
+            taskService.DoneTask(id);
+            return RedirectToAction("AllDoneTasks");
         }
     }
 }

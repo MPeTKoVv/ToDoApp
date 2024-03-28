@@ -41,7 +41,7 @@
                         <p style="margin-bottom: 0rem">Added on: @task.CreatedOn<p>
                         <p style="margin-bottom: 0rem">Deadline: @task.Deadline<p>
                             <div class="buttons card-buttons">
-                                <a class="btn btn-success" asp-controller="Task" asp-action="Done" role="button">Done</a>
+                                <a asp-controller="Task" asp-action="Done" asp-route-id="@task.Id" class="btn btn-success">Done</a>
                             </div>
                     </div>
                 </div>

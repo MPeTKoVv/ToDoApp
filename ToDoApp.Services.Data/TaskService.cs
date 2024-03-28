@@ -45,12 +45,24 @@
             return tasks;
         }
 
+        public void DoneTask(int taskId)
+        {
+            var task = dbContext
+                .Tasks
+                .FirstOrDefault(t => t.Id == taskId);
+
+            task.IsDone = true;
+
+            dbContext.SaveChanges();
+        }
+
         public IEnumerable<TaskViewModel> GetAllTasks()
         {
             IEnumerable<TaskViewModel> tasks = dbContext
                 .Tasks
                 .Select(t => new TaskViewModel
                 {
+                    Id = t.Id,
                     Title = t.Title,
                     CreatedOn = t.CreatedOn,
                     Deadline = t.Deadline,
