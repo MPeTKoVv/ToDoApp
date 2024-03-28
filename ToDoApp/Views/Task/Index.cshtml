@@ -14,7 +14,7 @@
             <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="AllDoneTasks" role="button">Your done tasks</a>
             @if (Model.Count != 0)
             {
-                <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="Add" role="button">Add</a>
+                <a asp-controller="Task" asp-action="Add" class="btn btn-primary d-inline">Add</a>
             }
         </div>
     </div>
@@ -41,7 +41,9 @@
                         <p style="margin-bottom: 0rem">Added on: @task.CreatedOn<p>
                         <p style="margin-bottom: 0rem">Deadline: @task.Deadline<p>
                             <div class="buttons card-buttons">
+                                <a asp-controller="Task" asp-action="Details" asp-route-id="@task.Id" class="btn btn-warning">Details</a>
                                 <a asp-controller="Task" asp-action="Done" asp-route-id="@task.Id" class="btn btn-success">Done</a>
+
                             </div>
                     </div>
                 </div>
