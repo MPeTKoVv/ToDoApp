@@ -33,6 +33,7 @@
                 .Tasks
                 .Select(t => new TaskAllViewModel
                 {
+                    Id = t.Id,
                     Title = t.Title,
                     CreatedOn = t.CreatedOn,
                     Deadline = t.Deadline,

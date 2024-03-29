@@ -34,7 +34,7 @@
         <div class="row">
             @foreach (var task in Model)
             {
-                <partial name="_TaskPartial" model="task" />
+                <partial name="_TaskPartial" model="@task" />
             }
         </div>
     }
