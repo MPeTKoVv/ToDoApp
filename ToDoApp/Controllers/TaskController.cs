@@ -70,7 +70,7 @@
         [HttpPost]
         public IActionResult Details(TaskViewModel viewModel)
         {
-            
+            taskService.UpdateTask(viewModel.Id,viewModel);
             return RedirectToAction("Index");
         }
     }

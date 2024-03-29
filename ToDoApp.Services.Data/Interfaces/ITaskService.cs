@@ -10,5 +10,6 @@
         void AddTask(TaskFormModel taskViewModel);
         void DoneTask(int taskId);
         TaskViewModel Details(int taskId);
+        void UpdateTask(int taskId, TaskViewModel viewModel);
     }
 }

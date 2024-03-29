@@ -94,5 +94,18 @@
 
             return tasks;
         }
+
+        public void UpdateTask(int taskId, TaskViewModel viewModel)
+        {
+            var task = dbContext
+                .Tasks
+                .FirstOrDefault(t => t.Id == taskId);
+
+            task.Title = viewModel.Title;
+            task.Description = viewModel.Description;
+            task.Deadline = viewModel.Deadline;
+
+            dbContext.SaveChanges();
+        }
     }
 }
