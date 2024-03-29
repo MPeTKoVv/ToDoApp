@@ -22,14 +22,16 @@
             <input asp-for="Deadline" type="date" class="form-control" id="floatingPassword" placeholder="Deadline">
             <label for="floatingPassword">Deadline (optional)</label>
         </div>
-        <div class="text-center">
-            @if (!Model.IsDone)
-            {
-                <a asp-controller="Task" asp-action="Done" asp-route-id="@Model.Id" class="btn btn-success">Done</a>
-            }
-        </div>
-        <div class="text-center">
-            <input class="btn btn-primary mt-3" type="submit" value="Save" />
+        <div class="buttons">
+            <div class="text-center">
+                @if (!Model.IsDone)
+                {
+                    <a asp-controller="Task" asp-action="Done" asp-route-id="@Model.Id" class="btn btn-success">Done</a>
+                }
+            </div>
+            <div class="text-center">
+                <input class="btn btn-primary mt-3" type="submit" value="Save" />
+            </div>
         </div>
     </form>
 </div>
