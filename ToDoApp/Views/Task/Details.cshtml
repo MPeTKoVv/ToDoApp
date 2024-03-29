@@ -14,11 +14,11 @@
             <textarea asp-for="Description" class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Description</label>
         </div>
-        <div class="form-floating">
+        <div class="form-floating date">
             <input asp-for="CreatedOn" type="date" readonly class="form-control" id="floatingPassword">
             <label for="floatingPassword">Created on</label>
         </div>
-        <div class="form-floating">
+        <div class="form-floating date">
             <input asp-for="Deadline" type="date" class="form-control" id="floatingPassword" placeholder="Deadline">
             <label for="floatingPassword">Deadline (optional)</label>
         </div>
@@ -36,5 +36,6 @@
 
 @section Scripts
 {
+    <partial name="_Styles" />
     <partial name="_ValidationScriptsPartial"></partial>
 }
