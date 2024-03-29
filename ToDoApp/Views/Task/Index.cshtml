@@ -6,9 +6,9 @@
 }
 
 <div>
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="header">
         <div>
-            <h2 class="d-inline">Your tasks</h2>
+            <h2 class="title">Your Tasks</h2>
         </div>
         <div class="d-flex align-items-center justify-content-between nav-buttons">
             <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="AllDoneTasks" role="button">Your done tasks</a>
@@ -35,18 +35,7 @@
         <div class="row">
             @foreach (var task in Model)
             {
-                <div class="col-md-3">
-                    <div class="card mb-2 d-flex align-items-center">
-                        <h4>@task.Title</h4>
-                        <p style="margin-bottom: 0rem">Added on: @task.CreatedOn<p>
-                        <p style="margin-bottom: 0rem">Deadline: @task.Deadline<p>
-                            <div class="buttons card-buttons">
-                                <a asp-controller="Task" asp-action="Details" asp-route-id="@task.Id" class="btn btn-warning">Details</a>
-                                <a asp-controller="Task" asp-action="Done" asp-route-id="@task.Id" class="btn btn-success">Done</a>
-
-                            </div>
-                    </div>
-                </div>
+                <partial name="_TaskPartial" model="task" />
             }
         </div>
     }

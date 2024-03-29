@@ -6,12 +6,16 @@
 }
 
 <div>
-    <div class="d-flex align-items-center justify-content-between">
-        <h2 class="d-inline">Your Done Tasks</h2>
-        @if (Model.Count != 0)
-        {
-            <a class="btn btn-primary d-inline" asp-controller="Task" asp-action="Index" role="button">Your tasks</a>
-        }
+    <div class="header">
+        <div>
+            <h2 class="title">Your Done Tasks</h2>
+        </div>
+        <div class="d-flex align-items-center justify-content-between nav-buttons">
+            @if (Model.Count != 0)
+            {
+                <a asp-controller="Task" asp-action="Index" class="btn btn-primary d-inline">Your tasks</a>
+            }
+        </div>
     </div>
     <hr />
 </div>
@@ -30,13 +34,10 @@
         <div class="row">
             @foreach (var task in Model)
             {
-                <div class="col-md-3">
-                    <div class="card mb-2 d-flex align-items-center">
-                        <h4>@task.Title</h4>
-                        <p>Added on: @task.CreatedOn<p>
-                    </div>
-                </div>
+                <partial name="_TaskPartial" model="task" />
             }
         </div>
     }
 </div>
+
+<partial name="_Styles" />
