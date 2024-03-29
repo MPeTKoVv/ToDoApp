@@ -1,0 +1,34 @@
+﻿@using ToDoApp.Web.ViewModels.Task
+@model TaskViewModel
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+    <form method="post">
+        <div class="form-floating mb-3">
+            <input asp-for="Title" class="form-control" id="floatingInput" placeholder="Title">
+            <label for="floatingInput">Title</label>
+        </div>
+        <div class="form-floating">
+            <textarea asp-for="Description" class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Description</label>
+        </div>
+        <div class="form-floating">
+            <input asp-for="CreatedOn" type="date" readonly class="form-control" id="floatingPassword">
+            <label for="floatingPassword">Created on</label>
+        </div>
+        <div class="form-floating">
+            <input asp-for="Deadline" type="date" class="form-control" id="floatingPassword" placeholder="Deadline">
+            <label for="floatingPassword">Deadline (optional)</label>
+        </div>
+        <div class="text-center">
+            <input class="btn btn-primary mt-3" type="submit" value="Save" />
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"></partial>
+}

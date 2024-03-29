@@ -27,11 +27,11 @@
             dbContext.SaveChanges();
         }
 
-        public IEnumerable<TaskViewModel> AllDoneTasks()
+        public IEnumerable<TaskAllViewModel> AllDoneTasks()
         {
-            IEnumerable<TaskViewModel> tasks = dbContext
+            IEnumerable<TaskAllViewModel> tasks = dbContext
                 .Tasks
-                .Select(t => new TaskViewModel
+                .Select(t => new TaskAllViewModel
                 {
                     Title = t.Title,
                     CreatedOn = t.CreatedOn,
@@ -45,6 +45,25 @@
             return tasks;
         }
 
+        public TaskViewModel Details(int taskId)
+        {
+            var task = dbContext.
+                Tasks.
+                FirstOrDefault(t => t.Id == taskId);
+
+            var taskViewModel = new TaskViewModel
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                CreatedOn = task.CreatedOn,
+                Deadline = task.Deadline,
+                IsDone = task.IsDone
+            };
+
+            return taskViewModel;
+        }
+
         public void DoneTask(int taskId)
         {
             var task = dbContext
@@ -56,11 +75,11 @@
             dbContext.SaveChanges();
         }
 
-        public IEnumerable<TaskViewModel> GetAllTasks()
+        public IEnumerable<TaskAllViewModel> GetAllTasks()
         {
-            IEnumerable<TaskViewModel> tasks = dbContext
+            IEnumerable<TaskAllViewModel> tasks = dbContext
                 .Tasks
-                .Select(t => new TaskViewModel
+                .Select(t => new TaskAllViewModel
                 {
                     Id = t.Id,
                     Title = t.Title,

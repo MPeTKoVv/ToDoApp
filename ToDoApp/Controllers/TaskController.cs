@@ -60,5 +60,18 @@
             taskService.DoneTask(id);
             return RedirectToAction("AllDoneTasks");
         }
+
+        public IActionResult Details(int id)
+        { 
+            var viewModel = taskService.Details(id);
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Details(TaskViewModel viewModel)
+        {
+            
+            return RedirectToAction("Index");
+        }
     }
 }

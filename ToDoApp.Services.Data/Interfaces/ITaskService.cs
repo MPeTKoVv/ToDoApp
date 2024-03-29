@@ -5,9 +5,10 @@
 
     public interface ITaskService
     {
-        IEnumerable<TaskViewModel> GetAllTasks();
-        IEnumerable<TaskViewModel> AllDoneTasks();
+        IEnumerable<TaskAllViewModel> GetAllTasks();
+        IEnumerable<TaskAllViewModel> AllDoneTasks();
         void AddTask(TaskFormModel taskViewModel);
         void DoneTask(int taskId);
+        TaskViewModel Details(int taskId);
     }
 }
