@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 /ToDoApp.Data/Configurations
 /ToDoApp.Data/Configurations/CategoryEntityConfiguration.cs
+/ToDoApp.Data/ToDoAppDbContext.cs

@@ -19,6 +19,7 @@ namespace ToDoApp.Web
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<ITaskService, TaskService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             var app = builder.Build();
 

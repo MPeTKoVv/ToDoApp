@@ -8,10 +8,12 @@
     public class TaskController : Controller
     {
         private readonly ITaskService taskService;
+        private readonly ICategoryService categoryService;
 
-        public TaskController(ITaskService taskService)
+        public TaskController(ITaskService taskService, ICategoryService categoryService)
         {
             this.taskService = taskService;
+            this.categoryService = categoryService;
         }
 
         public IActionResult Index()
@@ -23,7 +25,10 @@
         [HttpGet]
         public IActionResult Add()
         {
-            TaskFormModel model = new TaskFormModel();
+            TaskFormModel model = new TaskFormModel
+            {
+                Categories = this.categoryService.GetAllCategories()
+            };
 
             return Add(model);
         }

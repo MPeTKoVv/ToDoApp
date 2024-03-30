@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToDoApp.Data;
 
@@ -11,9 +12,11 @@ using ToDoApp.Data;
 namespace ToDoApp.Data.Migrations
 {
     [DbContext(typeof(ToDoAppDbContext))]
-    partial class ToDoAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240329222107_AddCategoryToDoClass")]
+    partial class AddCategoryToDoClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,50 +46,6 @@ namespace ToDoApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImageUrl = "https://thenounproject.com/icon/personal-task-396627/",
-                            Name = "Personal"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImageUrl = "https://thenounproject.com/icon/job-4080118/",
-                            Name = "Work"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImageUrl = "https://thenounproject.com/icon/task-home-2676056/",
-                            Name = "Home"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ImageUrl = "https://thenounproject.com/icon/clipboard-3990469/",
-                            Name = "Personal"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ImageUrl = "https://thenounproject.com/icon/financial-report-5974043/",
-                            Name = "Financial"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ImageUrl = "https://thenounproject.com/icon/share-task-396661/",
-                            Name = "Social"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ImageUrl = "https://thenounproject.com/icon/assignment-4027357/",
-                            Name = "Educational"
-                        });
                 });
 
             modelBuilder.Entity("ToDoApp.Data.Models.ToDo", b =>

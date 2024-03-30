@@ -10,7 +10,18 @@
         <input asp-for="Title" class="form-control" id="floatingInput" placeholder="Title">
         <label for="floatingInput">Title</label>
     </div>
-    <div class="form-floating">
+        <div class="form-group">
+            <label asp-for="CategoryId"></label>
+            <select asp-for="CategoryId" class="form-control">
+                @foreach (var category in Model.Categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" class="small textdanger"></span>
+        </div>
+
+    <div class="description form-floating">
         <textarea asp-for="Description" class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
         <label for="floatingTextarea2">Description</label>
     </div>

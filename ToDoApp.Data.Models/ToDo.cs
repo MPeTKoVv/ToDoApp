@@ -1,8 +1,8 @@
 ﻿namespace ToDoApp.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
-
-    using static ToDoApp.Common.DataValidatoinConstants.ToDo;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using static ToDoApp.Common.DataValidationConstants.ToDo;
 
     public class ToDo
     {
@@ -30,5 +30,10 @@
         public DateTime? Deadline { get; set; }
 
         public bool IsDone { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [ForeignKey(nameof(CategoryId))]
+        public Category Category { get; set; } = null!;
     }
 }
