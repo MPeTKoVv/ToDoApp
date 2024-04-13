@@ -1,0 +1,29 @@
+﻿.buttons {
+    padding: 0.5em;
+}
+
+.nav-buttons * {
+    margin-left: 1em;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    display: inline;
+}
+
+.card {
+    padding: 0.5em;
+}
+
+.description {
+    margin: 1em 0em;
+}
+
+.priority {
+    margin: 1em 0em;
+}
