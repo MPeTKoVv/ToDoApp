@@ -4,8 +4,8 @@
 <div class="col-md-3">
     <div class="card mb-2 d-flex align-items-center">
         <h4>@Model.Title</h4>
-        <p style="margin-bottom: 0rem">Added on: @Model.CreatedOn<p>
-        <p style="margin-bottom: 0rem">Deadline: @Model.Deadline<p>
+        <p style="margin-bottom: 0rem">Priority: @Model.Priority<p>
+        <p style="margin-bottom: 0rem">Added on: @Model.CreatedOn.ToString("dd.MM.yyyy")<p>
             <div class="buttons card-buttons">
                 <a asp-controller="Task" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-warning">Details</a>
                  @if (!Model.IsDone)

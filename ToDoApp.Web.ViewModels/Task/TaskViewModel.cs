@@ -6,7 +6,7 @@
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public DateTime CreatedOn { get; set; }
-        public DateTime? Deadline { get; set; }
+        public int Priority { get; set; }
         public bool IsDone { get; set; }
     }
 }

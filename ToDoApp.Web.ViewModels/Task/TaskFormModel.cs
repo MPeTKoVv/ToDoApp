@@ -7,6 +7,11 @@
 
     public class TaskFormModel
     {
+        public TaskFormModel()
+        {
+            this.Categories = new HashSet<TaskSelectCategoryViewModel>();
+        }
+
         [Required]
         [StringLength(TitleMaxLength, MinimumLength = TitleMinLength)]
         public string Title { get; set; } = null!;
@@ -18,9 +23,9 @@
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
 
-        public DateTime? Deadline { get; set; }
+        public int Priority { get; set; }
 
-        public IEnumerable<TaskSelectCategoryViewModel> Categories { get; set; }
+        public IEnumerable<TaskSelectCategoryViewModel> Categories { get; set; } = null!;
 
     }
 }

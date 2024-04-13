@@ -36,20 +36,15 @@
         [HttpPost]
         public IActionResult Add(TaskFormModel taskFormModel)
         {
-            if (taskFormModel.Deadline < DateTime.UtcNow)
-            {
-
-            }
-
             try
             {
-            taskService.AddTask(taskFormModel);
-                return RedirectToAction("Index", "Home");
+                taskService.AddTask(taskFormModel);
+                return RedirectToAction("Index");
 
             }
             catch (Exception)
             {
-
+                taskFormModel.Categories = categoryService.GetAllCategories();
                 return View(taskFormModel);
             }
         }
@@ -67,7 +62,7 @@
         }
 
         public IActionResult Details(int id)
-        { 
+        {
             var viewModel = taskService.Details(id);
             return View(viewModel);
         }
@@ -75,7 +70,7 @@
         [HttpPost]
         public IActionResult Details(TaskViewModel viewModel)
         {
-            taskService.UpdateTask(viewModel.Id,viewModel);
+            taskService.UpdateTask(viewModel.Id, viewModel);
             return RedirectToAction("Index");
         }
     }

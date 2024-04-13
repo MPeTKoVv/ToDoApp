@@ -16,10 +16,6 @@ namespace ToDoApp.Data.Models
         [StringLength(100)]
         public string Name { get; set; } = null!;
 
-        [Required]
-        [StringLength(100)]
-        public string ImageUrl { get; set; } = null!;
-
         public virtual ICollection<ToDo> Tasks { get; set; } = null!;
     }
 }

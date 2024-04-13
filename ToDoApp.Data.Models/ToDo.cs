@@ -26,8 +26,7 @@
         [Required]
         public DateTime CreatedOn { get; set; }
 
-        [Required]
-        public DateTime? Deadline { get; set; }
+        public int Priority { get; set; }
 
         public bool IsDone { get; set; }
 

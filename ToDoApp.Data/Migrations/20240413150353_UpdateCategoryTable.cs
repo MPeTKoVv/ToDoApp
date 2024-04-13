@@ -7,11 +7,29 @@
 namespace ToDoApp.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfigureCategories : Migration
+    public partial class UpdateCategoryTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Tasks_Categories_CategoryId",
+                table: "Tasks");
+
+            migrationBuilder.DropColumn(
+                name: "ImageUrl",
+                table: "Categories");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "CategoryId",
+                table: "Tasks",
+                type: "int",
+                nullable: false,
+                defaultValue: 0,
+                oldClrType: typeof(int),
+                oldType: "int",
+                oldNullable: true);
+
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
@@ -25,11 +43,23 @@ namespace ToDoApp.Data.Migrations
                     { 6, "Social" },
                     { 7, "Educational" }
                 });
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Tasks_Categories_CategoryId",
+                table: "Tasks",
+                column: "CategoryId",
+                principalTable: "Categories",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Tasks_Categories_CategoryId",
+                table: "Tasks");
+
             migrationBuilder.DeleteData(
                 table: "Categories",
                 keyColumn: "Id",
@@ -64,6 +94,29 @@ namespace ToDoApp.Data.Migrations
                 table: "Categories",
                 keyColumn: "Id",
                 keyValue: 7);
+
+            migrationBuilder.AlterColumn<int>(
+                name: "CategoryId",
+                table: "Tasks",
+                type: "int",
+                nullable: true,
+                oldClrType: typeof(int),
+                oldType: "int");
+
+            migrationBuilder.AddColumn<string>(
+                name: "ImageUrl",
+                table: "Categories",
+                type: "nvarchar(100)",
+                maxLength: 100,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Tasks_Categories_CategoryId",
+                table: "Tasks",
+                column: "CategoryId",
+                principalTable: "Categories",
+                principalColumn: "Id");
         }
     }
 }

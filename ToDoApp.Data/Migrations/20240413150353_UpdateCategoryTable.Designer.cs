@@ -12,8 +12,8 @@ using ToDoApp.Data;
 namespace ToDoApp.Data.Migrations
 {
     [DbContext(typeof(ToDoAppDbContext))]
-    [Migration("20240330193136_ConfigureCategories")]
-    partial class ConfigureCategories
+    [Migration("20240413150353_UpdateCategoryTable")]
+    partial class UpdateCategoryTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,11 +33,6 @@ namespace ToDoApp.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -51,43 +46,36 @@ namespace ToDoApp.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "https://thenounproject.com/icon/personal-task-396627/",
                             Name = "Personal"
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "https://thenounproject.com/icon/job-4080118/",
                             Name = "Work"
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "https://thenounproject.com/icon/task-home-2676056/",
                             Name = "Home"
                         },
                         new
                         {
                             Id = 4,
-                            ImageUrl = "https://thenounproject.com/icon/clipboard-3990469/",
-                            Name = "Personal"
+                            Name = "Health"
                         },
                         new
                         {
                             Id = 5,
-                            ImageUrl = "https://thenounproject.com/icon/financial-report-5974043/",
                             Name = "Financial"
                         },
                         new
                         {
                             Id = 6,
-                            ImageUrl = "https://thenounproject.com/icon/share-task-396661/",
                             Name = "Social"
                         },
                         new
                         {
                             Id = 7,
-                            ImageUrl = "https://thenounproject.com/icon/assignment-4027357/",
                             Name = "Educational"
                         });
                 });

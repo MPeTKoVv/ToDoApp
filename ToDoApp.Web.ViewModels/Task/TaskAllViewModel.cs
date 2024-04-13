@@ -8,8 +8,10 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public DateTime? Deadline { get; set; }
+        public int Priority { get; set; }
 
         public bool IsDone { get; set; }
+
+        public string CategoryUrl { get; set; }
     }
 }

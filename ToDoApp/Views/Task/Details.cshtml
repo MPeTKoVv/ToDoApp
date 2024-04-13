@@ -14,14 +14,19 @@
             <textarea asp-for="Description" class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
             <label for="floatingTextarea2">Description</label>
         </div>
+        <select class="form-control priority" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+
         <div class="form-floating date">
             <input asp-for="CreatedOn" type="date" readonly class="form-control" id="floatingPassword">
             <label for="floatingPassword">Created on</label>
         </div>
-        <div class="form-floating date">
-            <input asp-for="Deadline" type="date" class="form-control" id="floatingPassword" placeholder="Deadline">
-            <label for="floatingPassword">Deadline (optional)</label>
-        </div>
+
         <div class="buttons">
             <div class="text-center">
                 @if (!Model.IsDone)

@@ -20,7 +20,8 @@
             {
                 Title = taskFormModel.Title,
                 Description = taskFormModel.Description,
-                Deadline = taskFormModel.Deadline
+                Priority = taskFormModel.Priority,
+                CategoryId = taskFormModel.CategoryId
             };
 
             dbContext.Tasks.Add(newTask);
@@ -36,8 +37,8 @@
                     Id = t.Id,
                     Title = t.Title,
                     CreatedOn = t.CreatedOn,
-                    Deadline = t.Deadline,
-                    IsDone = t.IsDone
+                    Priority = t.Priority,
+                    IsDone = t.IsDone,
                 })
                 .Where(t => t.IsDone)
                 .OrderBy(t => t.CreatedOn)
@@ -58,7 +59,7 @@
                 Title = task.Title,
                 Description = task.Description,
                 CreatedOn = task.CreatedOn,
-                Deadline = task.Deadline,
+                Priority = task.Priority,
                 IsDone = task.IsDone
             };
 
@@ -85,12 +86,11 @@
                     Id = t.Id,
                     Title = t.Title,
                     CreatedOn = t.CreatedOn,
-                    Deadline = t.Deadline,
+                    Priority = t.Priority,
                     IsDone = t.IsDone
                 })
                 .Where(t => !t.IsDone)
-                .OrderBy(t => t.Deadline)
-                .ThenBy(t => t.CreatedOn)
+                .OrderBy(t => t.CreatedOn)
                 .ToList();
 
             return tasks;
@@ -104,7 +104,7 @@
 
             task.Title = viewModel.Title;
             task.Description = viewModel.Description;
-            task.Deadline = viewModel.Deadline;
+            task.Priority = viewModel.Priority;
 
             dbContext.SaveChanges();
         }
